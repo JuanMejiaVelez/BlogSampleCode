@@ -1,0 +1,107 @@
+﻿<Page
+    x:Class="RibbonStyle.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RibbonStyle"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="AppStyles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Page.Resources>
+  <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+      <!-- Title Bar -->
+      <RowDefinition Height="Auto" />
+      <!-- Ribbon -->
+      <RowDefinition Height="Auto" />
+      <!-- Window Content -->
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid x:Name="TitleBarPanel" 
+          Grid.Row="0" 
+          Background="{StaticResource TitleBarBackgroundColorBrush}"
+          Height="{StaticResource TitleBarHeight}">
+      <Grid.ColumnDefinitions>
+        <!-- Left Reserved Area -->
+        <ColumnDefinition Width="{StaticResource TitleBarLeftReservedAreaWidthGridLength}" />
+        <!-- Window Title -->
+        <ColumnDefinition  />
+        <!-- Current User -->
+        <ColumnDefinition Width="{StaticResource TitleBarCurrentUserAreaWidthGridLength}" />
+        <!-- Right Reserved Area -->
+        <ColumnDefinition Width="{StaticResource TitleBarRightReservedAreaWidthGridLength}" />
+      </Grid.ColumnDefinitions>
+      <Grid x:Name="LeftReservedColumn" />
+      <Grid x:Name="DocumentTitlePanel" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock x:Name="TitleBarText" 
+                   Text="Document"                    
+                   Foreground="{StaticResource TitleBarForegroundColorBrush}" 
+                   FontSize="{StaticResource TitleBarFontSize}" />
+      </Grid>
+      <Grid Grid.Column="2">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+          <TextBlock x:Name="CurrentUserNameText" 
+                     Text="Daniel Jackson" 
+                     Foreground="{StaticResource TitleBarForegroundColorBrush}" 
+                     VerticalAlignment="Center" 
+                     FontSize="{StaticResource TitleBarFontSize}" 
+                     Margin="15,0" />
+          <TextBlock x:Name="TitleBarSeparator" 
+                     Text="│" 
+                     Foreground="{StaticResource TitleBarForegroundColorBrush}"
+                     VerticalAlignment="Center" 
+                     Opacity="0.5" 
+                     Margin="17,0" />
+        </StackPanel>
+      </Grid>
+      <Grid x:Name="SystemWindowButtonsMask" Grid.Column="3"/>
+    </Grid>
+    <Grid x:Name="RibbonContainer" Grid.Row="1" Height="73">
+      <Pivot x:Name="AppRibbon">
+        <PivotItem Header="File">
+          <Grid>
+            <TextBlock Text="File is selected"/>
+          </Grid>
+        </PivotItem>
+        <PivotItem Header="Home">
+          <Grid>
+            <TextBlock Text="Home is selected"/>
+          </Grid>
+        </PivotItem>
+        <PivotItem Header="Insert">
+          <Grid>
+            <TextBlock Text="Insert is selected"/>
+          </Grid>
+        </PivotItem>
+        <PivotItem Header="Draw">
+          <Grid>
+            <TextBlock Text="Draw is selected"/>
+          </Grid>
+        </PivotItem>
+        <PivotItem Header="Layout">
+          <Grid>
+            <TextBlock Text="Layout is selected"/>
+          </Grid>
+        </PivotItem>
+        <PivotItem Header="Review">
+          <Grid>
+            <TextBlock Text="Review is selected"/>
+          </Grid>
+        </PivotItem>
+        <PivotItem Header="View">
+          <Grid>
+            <TextBlock Text="View is selected"/>
+          </Grid>
+        </PivotItem>
+      </Pivot>
+    </Grid>
+    <Grid Grid.Row="2">
+      <TextBlock Text="This is the app Content" />
+    </Grid>
+  </Grid>
+</Page>
