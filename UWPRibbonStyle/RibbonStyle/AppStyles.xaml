@@ -413,7 +413,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="PivotItem">
-          <Border  Background="{TemplateBinding Background}" 
+          <Grid  Background="{TemplateBinding Background}" 
                   HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
                   VerticalAlignment="{TemplateBinding VerticalAlignment}"
                   BorderBrush="LightGray"
@@ -432,7 +432,7 @@
                               ContentTemplate="{TemplateBinding ContentTemplate}"
                               Content="{TemplateBinding Content}"
                               Margin="{TemplateBinding Padding}" />
-          </Border>
+          </Grid>
         </ControlTemplate>
       </Setter.Value>
     </Setter>
