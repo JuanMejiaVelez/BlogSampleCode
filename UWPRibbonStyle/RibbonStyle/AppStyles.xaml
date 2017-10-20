@@ -453,7 +453,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="PivotHeaderItem">
-          <Border x:Name="Grid" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="2,2,0,0">
+          <Grid x:Name="Grid" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="2,2,0,0">
 
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="SelectionStates">
@@ -556,10 +556,9 @@
 
             </VisualStateManager.VisualStateGroups>
 
-            <Border.RenderTransform>
+            <Grid.RenderTransform>
               <TranslateTransform x:Name="ContentPresenterTranslateTransform" />
-            </Border.RenderTransform>
-            <Grid>
+            </Grid.RenderTransform>
               <ContentPresenter x:Name="ContentPresenter"
                                 Content="{TemplateBinding Content}"
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -576,7 +575,6 @@
                          HorizontalAlignment="Stretch"
                          Visibility="Collapsed" />
             </Grid>
-          </Border>
         </ControlTemplate>
       </Setter.Value>
     </Setter>
